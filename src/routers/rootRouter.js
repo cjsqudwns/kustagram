@@ -1,5 +1,5 @@
 import express from "express";
-import { postSignUp } from "../controllers/userController";
+import { postSignIn, postSignUp } from "../controllers/userController";
 
 const rootRouter = express.Router();
 
@@ -8,5 +8,7 @@ rootRouter.get("/", (req, res) => {
 });
 
 rootRouter.route("/signup").post(postSignUp);
+
+rootRouter.route("/signin").post(postSignIn);
 
 export default rootRouter;
